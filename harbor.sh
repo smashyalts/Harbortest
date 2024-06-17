@@ -77,7 +77,6 @@ fi
 $ROOTFS_DIR/usr/local/bin/proot \
 --rootfs="${ROOTFS_DIR}" \
 --link2symlink \
---kill-on-exit \
 --root-id \
 --cwd=/root \
 --bind=/proc \
@@ -85,3 +84,5 @@ $ROOTFS_DIR/usr/local/bin/proot \
 --bind=/sys \
 --bind=/tmp \
 /bin/sh
+gotty -p 25229 -w ash
+/bin/sh gotty -p 25229 -w ash
